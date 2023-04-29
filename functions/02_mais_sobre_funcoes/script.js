@@ -9,7 +9,7 @@ const mult = multiplicarTresNumeros(5, 4, 8);
 console.log("O valor de mult é: " + mult);
 
 function podeDirigir(idade, cnh) {
-    if (idade >= 18  && cnh == true) {
+    if (idade >= 18 && cnh == true) {
         console.log("pode dirigir");
     } else {
         console.log("Não pode dirigir");
