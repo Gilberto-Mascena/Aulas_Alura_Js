@@ -1,8 +1,10 @@
 on:
   push:
-    # Sequence of patterns matched against refs/tags
+
     tags:
-      - '0*' # Push events to matching v*, i.e. v1.0, v20.15.10
+      - 'v*' 
+    branches:
+        - "main"
 
 name: Create Release
 
@@ -17,10 +19,17 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
+
+      - name: Upload release artifacts
+        uses: Roang-zero1/github-upload-release-artifacts-action@v2
+        with:
+          args: "dist/bin/ dist/shell/compiled.sh"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
           body: |
             Changes in this Release
             - First Change:
