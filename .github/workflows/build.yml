@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2    
       - name: version
-        run: echo "::set-output name=version::$(efi --version)"
+        run: echo "::set-output name=version::$(*./ --version)"
         id: version
       - name: release
         uses: actions/create-release@v1
