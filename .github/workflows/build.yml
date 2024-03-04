@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2    
       - name: version
-        run: echo "::set-output name=version::$(*./ --version)"
+        run: echo "::set-output name=version::$(./Aulas_Alura_Js --version)"
         id: version
       - name: release
         uses: actions/create-release@v1
@@ -32,7 +32,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: efi.zip   
-          asset_name: efi.zip       
+          asset_path: ./Aulas_Alura_Js.zip   
+          asset_name: Aulas_Js.zip       
           asset_content_type: application/zip
   
