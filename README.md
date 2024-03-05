@@ -1,1 +1,1 @@
-# _**Aulas de JavaScrip**_
+# _**Aulas de JavaScript**_
