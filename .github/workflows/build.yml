@@ -12,8 +12,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Build project 
         run: |
-          zip -r aulas_js -x home/ignoreHome** runner/ignoreRunner** work/ignoreWork** Aulas_Alura_Js** 
-          ${{ github.workspace }} 
+          zip -r aulas_js Aulas_Alura_Js 
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
