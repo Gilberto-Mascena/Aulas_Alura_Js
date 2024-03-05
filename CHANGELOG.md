@@ -1,4 +1,4 @@
-# _**Mudadanças neste release**_
+# _**Mudanças nesta release**_
 
 - Primeira mudança:
   - _Adicionado novo workflow_ 
