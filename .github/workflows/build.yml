@@ -6,13 +6,13 @@ name: Upload Release Asset
 jobs:
   build:
     name: Upload Release Asset
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest    
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3        
       - name: Build project 
         run: |
-          zip -r aulas_js Aulas_Alura_Js 
+          zip -r aulas_js ${{ github.workspace }} 
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
